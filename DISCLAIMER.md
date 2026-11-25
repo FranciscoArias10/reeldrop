@@ -35,3 +35,4 @@ Downloading videos may violate the **Terms of Service** of some platforms (YouTu
 ## Takedown requests
 
 If you are a rights holder and believe this repository contains something that infringes your rights, please open an issue or contact the repository owner and it will be reviewed and removed promptly.
+

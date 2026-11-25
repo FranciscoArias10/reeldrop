@@ -1,38 +1,46 @@
-# ⚡ ReelDrop — Descargador Universal de Reels, Shorts, TikTok y Redes Sociales
+# ReelDrop
 
-> ⚠️ **Proyecto educativo y de pruebas.** Úsalo solo con contenido propio o con permiso, y respeta los derechos de autor y los términos de cada plataforma. Lee el [DISCLAIMER.md](DISCLAIMER.md) (en inglés).
+> **Educational & Testing Disclaimer:** This repository was created strictly for **personal learning, UI prototyping, and technical testing** — **not** with any malicious intent or to harm content creators or platforms. Please read the full [DISCLAIMER.md](DISCLAIMER.md) before using this code.
 
-Aplicación de escritorio multiplataforma (**Windows** y **Linux**) con interfaz gráfica moderna construida en **Python + CustomTkinter + yt-dlp + FFmpeg integrado**.
+<p align="center">
+  <img src="assets/mascota.png" width="128" alt="ReelDrop Mascot" />
+</p>
 
-Diseñada especialmente para descargar videos cortos (**Instagram Reels, TikTok, YouTube Shorts, Facebook Reels, X/Twitter, Reddit, Twitch Clips, Pinterest, Threads**) y videos completos de **+1000 plataformas** con **1 solo clic**.
-
----
-
-## ✨ Características Principales
-
-- **⚡ Pegar y Descargar en 1 Clic**: Lee automáticamente el enlace copiado en tu portapapeles y comienza la descarga al instante.
-- **🎯 Detección Automática de Red Social**: Identifica visualmente si pegaste un enlace de **TikTok**, **Instagram Reel**, **YouTube Short**, **Facebook Reel**, **X / Twitter**, **Reddit**, **Twitch**, etc.
-- **📱 Formato MP4 Optimizado para Reels/Shorts**: Prioriza códecs universales (`H.264 + AAC` en contenedor `.mp4`) para que los videos descargados se reproduzcan sin problemas en WhatsApp, Telegram, móviles, Windows y Linux.
-- **🎬 FFmpeg Integrado Automáticamente**: Incluye `imageio-ffmpeg` para unir pistas de video Full HD / 4K y extraer audio MP3 sin necesidad de instalar FFmpeg manualmente en el sistema.
-- **🍪 Soporte de Cookies de Navegador (Opcional)**: Permite usar la sesión de Chrome, Edge, Firefox o Brave para descargar Reels o videos con restricción de inicio de sesión.
-- **🖥️ 100% Compatible con Windows y Linux**: Aperturas nativas de archivos y carpetas (`Explorer` en Windows / `xdg-open` en Linux).
+**ReelDrop** is a minimalist, cross-platform desktop application (**Windows** & **Linux**) built with **Python**, **CustomTkinter**, **yt-dlp**, and **FFmpeg** (`imageio-ffmpeg`) to test single-input media link detection, stream merging, and universal `H.264 + AAC` MP4 compatibility.
 
 ---
 
-## 🚀 Cómo Ejecutar
+## Features
 
-### En Windows
-1. Haz doble clic sobre **`ejecutar_windows.bat`**
-   *(o ejecuta en terminal)*:
-   ```powershell
-   py app.py
-   ```
+- **Minimalist Single-Input Interface**: Inspired by the clean, distraction-free aesthetic of [cobalt](https://cobalt.tools), featuring custom monochrome line-art mascot artwork.
+- **Automatic Platform Detection**: Recognizes links from YouTube, YouTube Shorts, TikTok, Instagram Reels, Facebook, X/Twitter, Reddit, Twitch, SoundCloud, and more as soon as a URL is pasted.
+- **Three Processing Modes**:
+  - **`auto`** — Video + Audio in universally compatible `.mp4` (`H.264 / avc1` + `AAC-LC`).
+  - **`audio`** — Extracts audio track as `.mp3`.
+  - **`mute`** — Downloads video stream without audio (`.mp4`).
+- **Bundled FFmpeg Support**: Uses `imageio-ffmpeg` automatically when system `ffmpeg` is not installed, re-encoding `VP9` / `AV1` / `HEVC` streams to `H.264` when needed so files play natively on Windows Media Player and Linux media players.
+- **Cross-Platform (**Windows & Linux**)**: Native file and folder reveal (`SHOpenFolderAndSelectItems` on Windows, `xdg-open` / `gio` on Linux) and automatic creation of `~/Downloads/ReelDrop` on startup.
 
-### En Linux (Ubuntu / Debian / Fedora / Arch)
-1. Asegúrate de tener `python3-tk` instalado (en Ubuntu/Debian: `sudo apt install python3-tk python3-venv`).
-2. Da permisos de ejecución y lanza el script (crea el entorno e instala dependencias automáticamente):
-   ```bash
-   chmod +x ejecutar_linux.sh
-   ./ejecutar_linux.sh
-   ```
+---
 
+## Getting Started
+
+### Windows
+Double-click **`ejecutar_windows.bat`**, or run from a terminal:
+```powershell
+py -m pip install -r requirements.txt
+py app.py
+```
+
+### Linux (Ubuntu / Debian / Fedora / Arch)
+Ensure `python3-tk` and `python3-venv` are installed (e.g. `sudo apt install python3-tk python3-venv`), then run:
+```bash
+chmod +x ejecutar_linux.sh
+./ejecutar_linux.sh
+```
+
+---
+
+## Legal Notice
+
+This software is provided **"as is"** for educational and testing purposes only. Users are solely responsible for complying with applicable copyright laws and the Terms of Service of any website or platform accessed. See [DISCLAIMER.md](DISCLAIMER.md) for details.
